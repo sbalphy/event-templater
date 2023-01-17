@@ -1,0 +1,41 @@
+/* Essa é a stylesheet das páginas. A maioria das escolhas estéticas você provávelmente consegue fazer aqui. */
+:root {
+    /* definição do esquema de cores da página */
+    --main-bg: #493548;
+    --text:#BACAFE;
+    --details:#F5ECCD;
+    --links:#F93943;
+    --link-hover:#B2060E;
+    --link-bg:#987196;
+}
+
+a {
+    text-decoration: none;
+    color: var(--links);
+}
+
+a:hover, ::selection {
+    text-decoration: none;
+    color: var(--link-hover);
+    background-color: var(--link-bg);
+}
+
+h1 {
+    text-align: center;
+    margin: 2ch;
+}
+
+h2 {
+    color: var(--details);
+}
+
+body {
+    margin: auto;
+    max-width: 70ch;
+    padding: 2ch;
+    margin-top: 2ch;
+    border: 1px solid var(--text);
+    display: block;
+    background: var(--main-bg);
+    color: var(--text);
+}

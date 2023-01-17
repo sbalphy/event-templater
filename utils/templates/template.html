@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" lang="">
+<link rel="icon" href="favicon.gif" type="image/png">  
+<head>
+	<title>{{name}}</title>
+	<link rel="stylesheet" href="main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<tt>
+<body>
+	<header align="justify">
+	<details open>
+		<summary>Navegação</summary>
+		<br>
+		<table style="width:100%;">
+            <tr>
+                {% for page in pages %}
+                {% if page == name %}
+                <td><b>{{page}}</b></td>
+                {% else %}
+                <td><a href="./{{page}}.html">{{page}}</a></td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+		</table>
+		<br>
+	</details>
+	</header>
+	{% if originalcontent is none %}
+	<!--content-->
+	<!--content-->
+	{% else %}
+	<!--content-->{{originalcontent}}<!--content-->
+	{% endif %}
+	<p align="center"><a href="../about.html">about</a> | <a href="mailto:joelsm@usp.br">contact</a> | <a href="https://github.com/sbalphy/event-templater">source</a></p>
+</body>
+</tt>
