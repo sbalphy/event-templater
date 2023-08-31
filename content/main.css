@@ -1,57 +1,128 @@
 /* Essa é a stylesheet das páginas. A maioria das escolhas estéticas você provávelmente consegue fazer aqui. */
-:root {
-    /* definição do esquema de cores da página */
-    --main-bg: #ffffff;
-    --detail-bg: #BACAFE;
-    --text:#000000;
-    --details:#967500;
-    --links:#00115f;
-    --link-hover:#0027d3;
-    --link-bg:#BACAFE;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
 }
 
-a {
+:root {
+    /* definição do esquema de cores da página */
+    --main-bg: #000000;
+    --text:#ffffff;
+    --details:#444140;
+    --links:#BACAFE;
+    --link-hover:#0027d3;
+    --link-bg:#77809e;
+    --header-text: #2D3130;
+    --header-bg: #BACAFE;
+    --math: #EA3546;
+    --chem: #EF8700;
+    --phys: #F9C70E;
+    --bio: #04BE51;
+    --comp: #0078D7;
+}
+
+body {
+    background: var(--main-bg);
+    color: var(--text);
+}
+
+#header {
+    width: 100%;
+    background-color: var(--header-bg);
+    text-align: center;
+}
+
+.container{
+    padding: 25px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 450px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--header-text);
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: var(--details);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.1s
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+#about {
+    padding: 20px 0;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    row-gap: 100px;
+}
+
+.about-col{
+    flex-basis: 25%
+    
+    
+}
+
+.about-col img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col a {
     text-decoration: none;
     color: var(--links);
 }
 
-a:hover, ::selection {
+.about-col a {
     text-decoration: none;
-    color: var(--link-hover);
-    background-color: var(--link-bg);
+    color: var(--links);
 }
 
-h1 {
-    text-align: center;
-    margin: 2ch;
+#cmnarios {
+    padding: 20px 0;
 }
 
-h2 {
-    color: var(--details);
+.cmnarios-col{
+    flex-basis: 45%
 }
 
-header {
+.cmnarios-col img{
     width: 100%;
-    background-color: var(--detail-bg);
-    text-align: center;
+    border-radius: 15px;
 }
 
-table {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-td {
-    padding: 1ch;
-}
-
-body {
-    margin: auto;
-    max-width: 70ch;
-    padding: 2ch;
-    margin-top: 2ch;
-    border: 2px solid var(--text);
-    display: block;
-    background: var(--main-bg);
-    color: var(--text);
+.cmnarios-col a {
+    text-decoration: none;
+    color: var(--links);
 }
