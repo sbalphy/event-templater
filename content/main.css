@@ -8,11 +8,12 @@
 :root {
     /* definição do esquema de cores da página */
     --main-bg: #000000;
+    --alt-bg: #657153;
     --text:#ffffff;
-    --details:#444140;
+    --details:#3F4634;
     --links:#BACAFE;
     --link-hover:#0027d3;
-    --link-bg:#77809e;
+    --link-bg: #9BB2FD;
     --header-text: #2D3130;
     --header-bg: #BACAFE;
     --math: #EA3546;
@@ -26,6 +27,9 @@ body {
     background: var(--main-bg);
     color: var(--text);
 }
+
+
+/* header da página, preferívelmente deixar uniforme */
 
 #header {
     width: 100%;
@@ -76,7 +80,41 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+/* about da página, descreve o caráter da atividade */
+
 #about {
+    background-color: var(--main-bg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.tab-header {
+    margin-top: 20px;
+    padding: 10px 10px;
+    background: linear-gradient(to right, var(--details), var(--alt-bg) 75%);
+    font-size: 18px;
+    font-weight: 500;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 25%;
+}
+
+
+.tab-contents {
+    padding: 10px 10px;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    background-color: var(--alt-bg);
+    transition: 1s;
+}
+
+.tab-contents:hover {
+    border-bottom-right-radius: 30% 15%;
+}
+
+/* lista da página, opcional */
+
+#list {
     padding: 20px 0;
 }
 
@@ -88,41 +126,29 @@ nav ul li a:hover::after {
     row-gap: 100px;
 }
 
-.about-col{
-    flex-basis: 25%
-    
-    
+.col-large{
+    flex-basis: 90%
 }
 
-.about-col img{
-    width: 100%;
-    border-radius: 15px;
-}
-
-.about-col a {
-    text-decoration: none;
-    color: var(--links);
-}
-
-.about-col a {
-    text-decoration: none;
-    color: var(--links);
-}
-
-#cmnarios {
-    padding: 20px 0;
-}
-
-.cmnarios-col{
+.col-medium{
     flex-basis: 45%
 }
 
-.cmnarios-col img{
+.col-small{
+    flex-basis: 30%
+}
+
+.col img{
     width: 100%;
     border-radius: 15px;
 }
 
-.cmnarios-col a {
+.col a {
+    text-decoration: none;
+    color: var(--links);
+}
+
+.col a {
     text-decoration: none;
     color: var(--links);
 }
