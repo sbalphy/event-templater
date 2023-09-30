@@ -7,15 +7,15 @@
 
 :root {
     /* definição do esquema de cores da página */
-    --main-bg: #000000;
-    --alt-bg: #657153;
+    --main-bg: #0E1428;
+    --alt-bg: #0E1428;
     --text:#ffffff;
-    --details:#3F4634;
-    --links:#BACAFE;
+    --details:#D14081;
+    --links:#D14081;
     --link-hover:#0027d3;
-    --link-bg: #9BB2FD;
+    --link-bg: #BFCDE0;
     --header-text: #2D3130;
-    --header-bg: #BACAFE;
+    --header-bg: #FFE2D1;
     --math: #EA3546;
     --chem: #EF8700;
     --phys: #F9C70E;
@@ -28,6 +28,11 @@ body {
     color: var(--text);
 }
 
+/* recomendações gerais para bom design */
+
+p {
+    max-width: 70ch;
+}
 
 /* header da página, preferívelmente deixar uniforme */
 
@@ -48,8 +53,27 @@ nav{
     flex-wrap: wrap;
 }
 
-.logo{
-    width: 450px;
+/* muda o logo para telas pequenas */
+@media (max-width: 800px) {
+    .logo{
+        align-content: left;
+        width: 30%;
+    }
+    
+    .logo-wide {
+        width: 0;
+    }        
+}
+
+@media (min-width: 800px) {
+    .logo{
+        align-self: left;
+        width: 40%;
+    }
+    
+    .logo-thin {
+        width: 0;
+    }        
 }
 
 nav ul li{
@@ -127,15 +151,15 @@ nav ul li a:hover::after {
 }
 
 .col-large{
-    flex-basis: 90%
+    flex-basis: 70ch
 }
 
 .col-medium{
-    flex-basis: 45%
+    flex-basis: 50ch
 }
 
 .col-small{
-    flex-basis: 30%
+    flex-basis: 30ch
 }
 
 .col img{
