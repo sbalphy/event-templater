@@ -8,14 +8,14 @@
 :root {
     /* definição do esquema de cores da página */
     --main-bg: #0E1428;
-    --alt-bg: #0E1428;
-    --text:#ffffff;
-    --details:#D14081;
+    --alt-bg: #136F63;
+    --text:#FFE2D1;
+    --details:#03CEA4;
     --links:#D14081;
     --link-hover:#0027d3;
     --link-bg: #BFCDE0;
     --header-text: #2D3130;
-    --header-bg: #FFE2D1;
+    --header-bg: #83C5BE;
     --math: #EA3546;
     --chem: #EF8700;
     --phys: #F9C70E;
@@ -34,6 +34,9 @@ p {
     max-width: 70ch;
 }
 
+h1 {
+    color: var(--details);
+}
 /* header da página, preferívelmente deixar uniforme */
 
 #header {
@@ -46,31 +49,26 @@ p {
     padding: 25px 10%;
 }
 
-nav{
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    position: relative;
+}
+
+.logo {
+    text-align: left;
+    height: 60px;
 }
 
 /* muda o logo para telas pequenas */
 @media (max-width: 800px) {
-    .logo{
-        align-content: left;
-        width: 30%;
-    }
-    
     .logo-wide {
         width: 0;
     }        
 }
 
 @media (min-width: 800px) {
-    .logo{
-        align-self: left;
-        width: 40%;
-    }
-    
     .logo-thin {
         width: 0;
     }        
@@ -102,6 +100,41 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    top: 5px;
+}
+
+.dropdown button{
+    background-color: var(--header-bg);
+    border: none;
+}
+
+.icon {
+    text-align: left;
+    height: 30px;
+}
+
+.dropdown-list {
+    display: none;
+    position: absolute;
+    top: 34px;
+    right: 0;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 4px 4px var(--details);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-list {
+    display: block;
+}
+
+.dropdown:hover button {
+    background-color: #fff;
 }
 
 /* about da página, descreve o caráter da atividade */
@@ -151,15 +184,15 @@ nav ul li a:hover::after {
 }
 
 .col-large{
-    flex-basis: 70ch
+    flex-basis: 75ch;
 }
 
 .col-medium{
-    flex-basis: 50ch
+    flex-basis: 55ch;
 }
 
 .col-small{
-    flex-basis: 30ch
+    flex-basis: 35ch;
 }
 
 .col img{
