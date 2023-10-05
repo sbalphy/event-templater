@@ -21,6 +21,7 @@
     --phys: #F9C70E;
     --bio: #04BE51;
     --comp: #0078D7;
+    --footer-bg: #2D3130;
 }
 
 body {
@@ -110,6 +111,7 @@ nav ul li a:hover::after {
 
 .dropdown button{
     background-color: var(--header-bg);
+    padding: 6px;
     border: none;
 }
 
@@ -121,9 +123,10 @@ nav ul li a:hover::after {
 .dropdown-list {
     display: none;
     position: absolute;
-    top: 34px;
+    top: 40px;
     right: 0;
     padding: 15px;
+    line-height: 35px;
     background-color: #fff;
     box-shadow: 4px 4px var(--details);
     z-index: 1;
@@ -208,4 +211,17 @@ nav ul li a:hover::after {
 .col a {
     text-decoration: none;
     color: var(--links);
+}
+
+/* footer */
+#footer {
+    width: 100%;
+    background-color: var(--footer-bg);
+    text-align: left;
+}
+
+#footer a {
+    text-decoration: none;
+    color: var(--links);
+    font-size: 18px;
 }
