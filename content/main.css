@@ -63,7 +63,7 @@ nav {
 }
 
 /* muda o logo para telas pequenas */
-@media (max-width: 800px) {
+@media (max-width: 799px) {
     .logo-wide {
         width: 0;
     }        

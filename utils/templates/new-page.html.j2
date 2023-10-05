@@ -1,0 +1,73 @@
+
+{# Entradas:
+	title: nome completo da atividade
+	pages: lista de páginas (ela mesma inclusa)
+	intro: texto de introdução
+	sections: lista de pares (head, content), com o título e conteúdo de cada seção
+	students: lista de pares (image, info), com o link da imagem e informações de cada estudante responsável
+	#}
+<!doctype html>
+<html class="no-js" lang="">
+<link rel="icon" href="favicon.gif" type="image/png">  
+<head>
+	<title>{{title}} - Moleculentos CCM</title>
+	<link rel="stylesheet" href="../main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="header">
+		<div class="container">
+			<nav>
+				<a href="../index.html"><img src="../lexicon/images/logoheader.svg" class="logo logo-wide" width="device-width"></a>
+				<a href="../index.html"><img src="../lexicon/images/minilogo.png" class="logo logo-thin" width="device-width"></a>
+				<ul>
+					<li><a href="../index.html">Home</a></li>
+					<li><div class="dropdown">
+						<button><img src="../lexicon/images/menu.png" class="icon"></button>
+						<div class="dropdown-list">
+							{% for page in pages %}
+							<a href="../{{page}}/index.html">{{page|capitalize}}</a>
+							{% endfor %}
+						</div>
+					</div></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<!--content-->
+	<div id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1>{{title}}</h1>
+					<br>
+					<p>
+						{{intro}}
+					</p>
+					{% for head, content in sections %}
+					<p class="tab-header active-tab">{{head}}</p>
+					<p class="tab-contents active-tab">
+						{{content}}
+					</p>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-small">
+					<h1>Alunos responsáveis</h1>
+					{% for image, info in students %}
+					<br>
+					<img src="images/{{image}}">
+					<h2>{{info}}</h2>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--content-->
+	<div id="footer">
+		<div class="container">
+			<a href="http://wiki.cecm.usp.br/~sunny">autor</a> | <a href="https://github.com/sbalphy/event-templater">source</a>
+		</div>
+	</div>
+</body>
