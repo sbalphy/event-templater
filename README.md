@@ -5,7 +5,7 @@ O utilitário principal é o pagemanager.py, que gerencia as páginas existentes
 
 Simplesmente modifique template.html e o main.css com o que você quiser e rode pagemanager.py para criar ou updatar as páginas.
 
-Um exemplo de página criada usando esse repositório está presente em http://wiki.cecm.usp.br/~sunny/demo/home.html
+Um exemplo de página criada usando esse repositório está presente em http://wiki.cecm.usp.br/~sunny/demo/index.html
 
 Requer o jinja2 instalado via pip.
 
