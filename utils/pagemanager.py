@@ -38,14 +38,16 @@ def createpage(pages, name):
     print(f"Navigation bars updated. Page creation has been successful.")
     return
 
+def updatepage_hard(pages, name):
+    return
 
-def updatepage(pages, name):
+def updatepage_soft(pages, name):
     filename = f"{name}/index.html"
     environment = Environment(loader=FileSystemLoader("templates/"), trim_blocks=True, lstrip_blocks=True)
     template = environment.get_template("update-page.html.j2")
     originalcontent = fetchcontent(f"../{filename}")
     content = template.render(
-        title = pages[name],
+        title = pages[name]["title"],
         pages = pages.keys(),
         originalcontent = originalcontent
     )
@@ -83,7 +85,7 @@ def updateall(pages):
     updateroot(pages)
     print(f"Updated index page.")
     for page in pages:
-        updatepage(pages, page)
+        updatepage_soft(pages, page)
     print(f"Updated all pages.")
     return
 
@@ -113,10 +115,12 @@ def main():
         createpage(pages, name)
     elif command == "remove":
         removepage(pages, name)
-    elif command == "update":
-        updatepage(pages, name)
+    elif command == "soft-update" or command == "update":
+        updatepage_soft(pages, name)
     elif command == "update-all":
         updateall(pages)
+    elif command == "hard-update":
+        updatepage_hard(pages, name)
     else:
         print(f"Unidentified command {command}. Nothing has been updated.")
     with open("./pages.json", "w") as f:   
