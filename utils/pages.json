@@ -11,36 +11,12 @@
    [
     "Como posso virar admin?",
     "Esperamos algum n\u00edvel de conforto com o ecossistema Linux (particularmente terminal) e com os espec\u00edficos da nossa sala de computa\u00e7\u00e3o antes de aceitar algu\u00e9m como admin, s\u00f3 para garantir que a pessoa n\u00e3o vai cometer erros b\u00e1sicos graves com acesso administrativo. A \"prova\" para checar esse conhecimento \u00e9 <a href=\"http://wiki.cecm.usp.br/wiki/index.php/Configurando_um_PC_da_rede_proaluno\">saber configurar um PC da sala do zero</a>, entendendo cada um dos passos (pode consultar a p\u00e1gina acima e outras documenta\u00e7\u00f5es, \u00f3bvio).\r\n<br><br>\r\nPara adquirir essa base, recomendamos dar uma lida na <a href=\"http://wiki.cecm.usp.br/wiki/index.php/Guia_de_Sobreviv%C3%AAncia_Molecular_dos_Admins\">nossa wiki</a> (um pouco desatualizada), na <a href=\"https://wiki.archlinux.org/\">ArchWiki</a> (wiki com informa\u00e7\u00f5es gerais sobre Linux, mas particularmente pro Arch) e no <a href=\"https://overthewire.org/wargames/bandit/\">Bandit</a> (joguinho que te d\u00e1 maior conforto em linha de comando). Tamb\u00e9m sinta-se livre para contatar os admins com d\u00favidas."
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    ""
    ]
   ],
   "students": [
    [
     "joel.png",
-    "Joel Soares (joelsm@usp.br)"
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    ""
+    "Joel Soares (<a href=\"mailto:joelsm@usp.br\">joelsm@usp.br</a>)"
    ]
   ],
   "links": [
@@ -63,6 +39,10 @@
    [
     "https://ccsl.ime.usp.br/pt-br/",
     "Software Livre USP"
+   ],
+   [
+    "https://proaluno.fflch.usp.br/linux-na-pro-aluno",
+    "Rede Linux FFLCH"
    ]
   ]
  }

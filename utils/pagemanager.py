@@ -92,9 +92,11 @@ def updateroot(pages):
     environment = Environment(loader=FileSystemLoader("templates/"), trim_blocks=True, lstrip_blocks=True)
     template = environment.get_template("update-root.html.j2")
     originalcontent = fetchcontent(f"../{filename}")
+    pageinfo = [(name, values['title'], values['description']) for name, values in pages.items()]
     content = template.render(
         pages = pages.keys(),
-        originalcontent = originalcontent
+        originalcontent = originalcontent,
+        pageinfo = pageinfo
     )
     with open(f"../{filename}", mode="w", encoding="utf-8") as page:
         page.write(content)
