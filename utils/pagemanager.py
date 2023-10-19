@@ -13,7 +13,7 @@ def parsecsv(pages, filename):
         next(reader)
         for row in reader:
             page = row[1].lower()
-            if page in pages.keys():
+            if page in pages:
                 check = input(f"Page {page} already exists in pagelist. Overwrite? (y/N) ")
                 if check.lower() != "y":
                     print(f"Page {page} has been skipped.")
@@ -31,37 +31,49 @@ def parsecsv(pages, filename):
 
 def createpage(pages, name):
     print(f"Creating page {name}, based on the information in pages.json.")
-    try:
-        page = pages[name]
-    except KeyError:
+    if name not in pages:
         print(f"Page {name} not found in pages.json. Try running 'pagemanager.py parse' first.")
         return
-
     print(f"Creating {name} folder.")
     os.mkdir(f"../content/{name}")
     os.mkdir(f"../content/{name}/images")
-    print(f"Writing template to {name}/index.html.")
-    environment = Environment(loader=FileSystemLoader("templates/"), trim_blocks=True, lstrip_blocks=True)
-    template = environment.get_template("new-page.html.j2")
-    content = template.render(
-        title = page['title'],
-        pages = pages.keys(),
-        intro = intro,
-        sections = sections,
-        students = students
-    )
-    with open(f"../{name}/index.html", mode="w", encoding="utf-8") as page:
-        page.write(content)
+    generatepage(pages, name)
     print(f"Page {name}/index.html created. Updating navigation bars.")
     updateall(pages)
     print(f"Navigation bars updated. Page creation has been successful.")
     return
 
-def updatepage_hard(pages, name):
+def generatepage(pages, name):
+    page = pages[name]
+    print(f"Writing new page template to {name}/index.html.")
+    environment = Environment(loader=FileSystemLoader("templates/"), trim_blocks=True, lstrip_blocks=True)
+    template = environment.get_template("new-page.html.j2")
+    content = template.render(
+        title = page['title'],
+        pages = pages.keys(),
+        intro = page['intro'],
+        sections = page['sections'],
+        links = page['links'],
+        students = page['students']
+    )
+    with open(f"../content/{name}/index.html", mode="w", encoding="utf-8") as target:
+        target.write(content)
+    print(f"Page {name}/index.html generated.")
     return
 
-def updatepage_soft(pages, name):
-    filename = f"{name}/index.html"
+def regenerateall(pages, name):
+    print(f"Regenerating all pages from pages.json info.")
+    for page in pages:
+        check = input(f"Regenerating {page}, are you sure? (y/N)")
+        if check.lower() != 'y':
+            print(f"Skipping {page}")
+            continue
+        generatepage(pages, page)
+    print(f"Regenerated every page.")
+    return
+
+def updatepage(pages, name):
+    filename = f"content/{name}/index.html"
     environment = Environment(loader=FileSystemLoader("templates/"), trim_blocks=True, lstrip_blocks=True)
     template = environment.get_template("update-page.html.j2")
     originalcontent = fetchcontent(f"../{filename}")
@@ -76,7 +88,7 @@ def updatepage_soft(pages, name):
     return
 
 def updateroot(pages):
-    filename = "index.html"
+    filename = "content/index.html"
     environment = Environment(loader=FileSystemLoader("templates/"), trim_blocks=True, lstrip_blocks=True)
     template = environment.get_template("update-root.html.j2")
     originalcontent = fetchcontent(f"../{filename}")
@@ -104,12 +116,12 @@ def updateall(pages):
     updateroot(pages)
     print(f"Updated index page.")
     for page in pages:
-        updatepage_soft(pages, page)
+        updatepage(pages, page)
     print(f"Updated all pages.")
     return
 
 def removepage(pages, name):
-    filename = f"{name}/index.html"
+    filename = f"content/{name}/index.html"
     check = input(f"Deleting page {filename}. Are you sure? This will not delete the whole directory. (y/N) ")
     if check.lower() == "y":
         os.remove(f"../{filename}")
@@ -134,12 +146,14 @@ def main():
         createpage(pages, name)
     elif command == "remove":
         removepage(pages, name)
-    elif command == "soft-update" or command == "update":
-        updatepage_soft(pages, name)
+    elif command == "update":
+        updatepage(pages, name)
     elif command == "update-all":
         updateall(pages)
-    elif command == "hard-update":
-        updatepage_hard(pages, name)
+    elif command == "regenerate":
+        generatepage(pages, name)
+    elif command == "regenerate-all":
+        regenerateall(pages, name)
     elif command == "parse":
         parsecsv(pages, "answers.csv")
     else:
