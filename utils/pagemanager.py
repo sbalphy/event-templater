@@ -3,32 +3,51 @@ import sys
 import os
 import json
 import re
+import csv
 from jinja2 import Environment, FileSystemLoader
 
+def parsecsv(pages, filename):
+    print(f"Parsing file {filename}...")
+    with open(filename, newline='') as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader)
+        for row in reader:
+            page = row[1].lower()
+            if page in pages.keys():
+                check = input(f"Page {page} already exists in pagelist. Overwrite? (y/N) ")
+                if check.lower() != "y":
+                    print(f"Page {page} has been skipped.")
+                    continue
+            print(f"Adding {page} entry to pagelist.")
+            pages[page] = {
+                'title': row[2],
+                'description': row[3],
+                'intro': row[5],
+                'sections': [list(pair) for pair in zip(row[6:14:2], row[7:14:2])],
+                'students': [[student.split(' ')[0].lower(), student] for student in row[14:19]],
+                'links': [list(pair) for pair in zip(row[21:30:2], row[20:30:2])]
+                }
+    return
+
 def createpage(pages, name):
-    print(f"Reading info from info/{name} file.")
+    print(f"Creating page {name}, based on the information in pages.json.")
     try:
-        with open(f"info/{name}", mode="r", encoding="utf-8") as f:
-            info = f.read().split(';')
-            title = info[0]
-            intro = info[1]
-            sections = [tuple(item.split('\n')) for item in info[2].split(',')]
-            students = [tuple(item.split('\n')) for item in info[3].split(',')]
-    except FileNotFoundError:
-        print(f"File info/{name} was not found. Aborting page creation.")
-        return      
-    pages[name] = title
+        page = pages[name]
+    except KeyError:
+        print(f"Page {name} not found in pages.json. Try running 'pagemanager.py parse' first.")
+        return
+
     print(f"Creating {name} folder.")
-    os.mkdir(f"../{name}")
-    os.mkdir(f"../{name}/images")
+    os.mkdir(f"../content/{name}")
+    os.mkdir(f"../content/{name}/images")
     print(f"Writing template to {name}/index.html.")
     environment = Environment(loader=FileSystemLoader("templates/"), trim_blocks=True, lstrip_blocks=True)
     template = environment.get_template("new-page.html.j2")
     content = template.render(
-        title = title,
+        title = page['title'],
         pages = pages.keys(),
-        intro = intro
-        sections = sections
+        intro = intro,
+        sections = sections,
         students = students
     )
     with open(f"../{name}/index.html", mode="w", encoding="utf-8") as page:
@@ -92,7 +111,7 @@ def updateall(pages):
 def removepage(pages, name):
     filename = f"{name}/index.html"
     check = input(f"Deleting page {filename}. Are you sure? This will not delete the whole directory. (y/N) ")
-    if check == "y" or check == "Y":
+    if check.lower() == "y":
         os.remove(f"../{filename}")
         pages.pop(name)
         print(f"Page {filename} removed.")
@@ -121,6 +140,8 @@ def main():
         updateall(pages)
     elif command == "hard-update":
         updatepage_hard(pages, name)
+    elif command == "parse":
+        parsecsv(pages, "answers.csv")
     else:
         print(f"Unidentified command {command}. Nothing has been updated.")
     with open("./pages.json", "w") as f:   

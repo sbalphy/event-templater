@@ -1,5 +1,69 @@
-[
- "home",
- "rules",
- "catering"
-]
+{
+ "admins": {
+  "title": "Admins do CCM",
+  "description": "Os servidores <i>web</i> e a sala de computa\u00e7\u00e3o do CCM s\u00e3o administrados por alunos do pr\u00f3prio curso.\r\n",
+  "intro": "Os admins s\u00e3o os alunos respons\u00e1veis pela manuten\u00e7\u00e3o e melhoramento dos recursos computacionais dispon\u00edveis aos alunos do CCM - em particular, os computadores pr\u00f3-aluno da sala de computa\u00e7\u00e3o e os dois servidores da sala (proccm, hub interno para autentica\u00e7\u00e3o da sala pr\u00f3-aluno, e fleming, servidor web que hosteia a wiki e p\u00e1ginas como essa).\r\n<br><br>\r\nA sala Linux do CCM (primeiro no Favo, e agora no Inova) \u00e9 uma das mais antigas da USP, e foi tradicionalmente gerida por alunos, ent\u00e3o estamos sempre buscando pessoas interessadas em computa\u00e7\u00e3o e software livre para manter essa tradi\u00e7\u00e3o.",
+  "sections": [
+   [
+    "Qual o benef\u00edcio de ser admin?",
+    "Monet\u00e1riamente, o CCM atualmente oferece duas bolsas de 700 reais mensais para monitores da sala pr\u00f3-aluno, que s\u00e3o priorizadas para admins da sala. Acad\u00eamicamente, trabalhar como admin d\u00e1 uma base \u00f3tima em aspectos essenciais da computa\u00e7\u00e3o que n\u00e3o costumam ser cobertos na estrada de ouro de Computa\u00e7\u00e3o I - IV: coisas como protocolos de rede, sistemas operacionais, hardware, sem falar do conhecimento pr\u00e1tico envolvido em manter uma rede de computadores funcionando.\r\n<br><br>\r\nAl\u00e9m disso, a liberdade concedida \u00e0 nossa sala permite que admins (ou at\u00e9 alunos normais, sob tutela de admins) desenvolvam qualquer projeto que seja de seu interesse usando os recursos computacionais da sala. Assim, voc\u00ea pode usar os recursos da sala como laborat\u00f3rio de cria\u00e7\u00e3o de p\u00e1ginas web, bancos de dados, programa\u00e7\u00e3o embarcada... S\u00f3 depende de voc\u00ea."
+   ],
+   [
+    "Como posso virar admin?",
+    "Esperamos algum n\u00edvel de conforto com o ecossistema Linux (particularmente terminal) e com os espec\u00edficos da nossa sala de computa\u00e7\u00e3o antes de aceitar algu\u00e9m como admin, s\u00f3 para garantir que a pessoa n\u00e3o vai cometer erros b\u00e1sicos graves com acesso administrativo. A \"prova\" para checar esse conhecimento \u00e9 <a href=\"http://wiki.cecm.usp.br/wiki/index.php/Configurando_um_PC_da_rede_proaluno\">saber configurar um PC da sala do zero</a>, entendendo cada um dos passos (pode consultar a p\u00e1gina acima e outras documenta\u00e7\u00f5es, \u00f3bvio).\r\n<br><br>\r\nPara adquirir essa base, recomendamos dar uma lida na <a href=\"http://wiki.cecm.usp.br/wiki/index.php/Guia_de_Sobreviv%C3%AAncia_Molecular_dos_Admins\">nossa wiki</a> (um pouco desatualizada), na <a href=\"https://wiki.archlinux.org/\">ArchWiki</a> (wiki com informa\u00e7\u00f5es gerais sobre Linux, mas particularmente pro Arch) e no <a href=\"https://overthewire.org/wargames/bandit/\">Bandit</a> (joguinho que te d\u00e1 maior conforto em linha de comando). Tamb\u00e9m sinta-se livre para contatar os admins com d\u00favidas."
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    ""
+   ]
+  ],
+  "students": [
+   [
+    "joel.png",
+    "Joel Soares (joelsm@usp.br)"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    ""
+   ]
+  ],
+  "links": [
+   [
+    "https://wiki.archlinux.org",
+    "ArchWiki"
+   ],
+   [
+    "http://wiki.cecm.usp.br/wiki/index.php/Guia_de_Sobreviv%C3%AAncia_Molecular_dos_Admins",
+    "Wikoleculares"
+   ],
+   [
+    "https://overthewire.org/wargames/bandit",
+    "Wargames"
+   ],
+   [
+    "https://linux.ime.usp.br/",
+    "Rede Linux IME"
+   ],
+   [
+    "https://ccsl.ime.usp.br/pt-br/",
+    "Software Livre USP"
+   ]
+  ]
+ }
+}
