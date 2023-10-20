@@ -33,3 +33,5 @@ TODOs do site:
 Favicon
 
 Domínio oficial
+
+RSS
