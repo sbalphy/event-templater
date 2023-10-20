@@ -17,15 +17,15 @@
 	<div id="header">
 		<div class="container">
 			<nav>
-				<a href="./index.html"><img src="./lexicon/images/logoheader.svg" class="logo logo-wide" width="device-width"></a>
-				<a href="./index.html"><img src="./lexicon/images/minilogo.png" class="logo logo-thin" width="device-width"></a>
+				<a href="."><img src="./lexicon/images/logoheader.svg" class="logo logo-wide" width="device-width"></a>
+				<a href="."><img src="./lexicon/images/minilogo.png" class="logo logo-thin" width="device-width"></a>
 				<ul>
-					<li><a href="./index.html">Home</a></li>
+					<li><a href=".">Home</a></li>
 					<li><div class="dropdown">
 						<button><img src="./lexicon/images/menu.png" class="icon"></button>
 						<div class="dropdown-list">
 							{% for page in pages %}
-							<a href="./{{page}}/index.html">{{page|capitalize}}</a>
+							<a href="./{{page}}">{{page|capitalize}}</a>
 							{% endfor %}
 						</div>
 					</div></li>
@@ -41,7 +41,7 @@
 				{% for name, title, description in pageinfo %}
 				<div class="col col-small">
 					<img src="lexicon/images/{{name}}">
-					<h1><a href="./{{name}}/index.html">{{title}}</a></h1>
+					<h1><a href="./{{name}}">{{title}}</a></h1>
 					{{description}}
 				</div>
 				{% endfor %}
