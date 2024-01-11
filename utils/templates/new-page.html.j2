@@ -53,7 +53,7 @@
 					</p>
 					{% endfor %}
 				</div>
-				{% if links is defined %}
+				{% if links is not none %}
 				<div class="col col-small">
 					<h1>Links relacionados</h1>
 					<div class="linklist">
@@ -64,6 +64,7 @@
 				</div>
 				{% endif %}
 			</div>
+			{% if students is not none %}
 			<div class="row">
 				<div class="col col-small">
 					<h1>Alunos responsáveis</h1>
@@ -74,6 +75,7 @@
 					{% endfor %}
 				</div>
 			</div>
+			{% endif %}
 		</div>
 	</div>
 	<!--content-->

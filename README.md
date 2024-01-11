@@ -10,7 +10,7 @@ Um exemplo de página criada usando esse repositório está presente em http://w
 Requer o jinja2 instalado via pip.
 
 Comandos:
-python pagemanager.py parse: Transforma informações num .csv emitido pelo nosso forms (https://forms.gle/K94s9TXeHJcce2x46) no nosso formato json.
+python pagemanager.py parse: Transforma informações do arquivo answers.csv emitido pelo nosso forms (https://forms.gle/K94s9TXeHJcce2x46) no nosso formato json.
 
 python pagemanager.py create page: Cria uma página chamada page.
 
