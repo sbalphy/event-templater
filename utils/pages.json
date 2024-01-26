@@ -44,7 +44,8 @@
     "https://proaluno.fflch.usp.br/linux-na-pro-aluno",
     "Rede Linux FFLCH"
    ]
-  ]
+  ],
+  "gallery": null
  },
  "basan\u00e7ado": {
   "title": "Basan\u00e7ado: b\u00e1sico e avan\u00e7ado entrela\u00e7ados",
@@ -71,7 +72,8 @@
     "mailto:fernandopachecocintra@usp.br",
     "Contato com o FPC (email)"
    ]
-  ]
+  ],
+  "gallery": null
  },
  "febrace": {
   "title": "Avaliadores da FEBRACE",
@@ -97,6 +99,14 @@
     "https://febrace.org.br/",
     "Site oficial FEBRACE"
    ]
+  ],
+  "gallery": [
+   "Uma das premia\u00e7\u00f5es de 2023.",
+   "Alunos do CCM com uma das alunas premiadas em 2023.",
+   "Plat\u00e9ia na cerim\u00f4nia de premia\u00e7\u00e3o de 2023.",
+   "Aluno do CCM avaliando um dos estandes.",
+   "Alunos do CCM andando pela feira.",
+   "Alunos do CCM com a outra aluna premiada em 2023."
   ]
  }
 }

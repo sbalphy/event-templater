@@ -25,7 +25,8 @@ def parsecsv(pages, filename):
                 'intro': row[5],
                 'sections': [list(pair) for pair in zip(row[6:14:2], row[7:14:2])],
                 'students': [[student.split(' ')[0].lower(), student] for student in row[14:19]],
-                'links': [list(pair) for pair in zip(row[21:30:2], row[20:30:2])]
+                'links': [list(pair) for pair in zip(row[21:30:2], row[20:30:2])],
+                'gallery': None
                 }
     return
 
@@ -54,7 +55,8 @@ def generatepage(pages, name):
         intro = page['intro'],
         sections = page['sections'],
         links = page['links'],
-        students = page['students']
+        students = page['students'],
+        gallery = page['gallery']
     )
     with open(f"../content/{name}/index.html", mode="w", encoding="utf-8") as target:
         target.write(content)

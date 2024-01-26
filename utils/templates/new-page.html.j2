@@ -6,6 +6,7 @@
 	sections: lista de pares (head, content), com o título e conteúdo de cada seção
 	links: lista de pares (link-address, link-title), com o endereço e nome para cada link
 	students: lista de pares (image, info), com o link da imagem e informações de cada estudante responsável
+	gallery: lista de strings de descrição para cada imagem da galeria
 	#}
 <!doctype html>
 <html class="no-js" lang="">
@@ -37,7 +38,7 @@
 		</div>
 	</div>
 	<!--content-->
-	<div id="about">
+	<div id="about" style="background-image: var(--gradients), url('./images/bg')">
 		<div class="container">
 			<div class="row">
 				<div class="col col-large">
@@ -78,6 +79,21 @@
 			{% endif %}
 		</div>
 	</div>
+	{% if gallery is not none %}
+	<div id="gallery">
+		<div class="container">
+			<h1>Galeria</h1>
+			<div class="row">
+				{% for description in gallery %}
+				<div class="col col-large">
+					<a href="./images/gallery{{loop.index0}}.jpg"><img src="./images/gallery{{loop.index0}}.jpg"></a>
+					{{description}}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	{% endif %}
 	<!--content-->
 	<div id="footer">
 		<div class="container">

@@ -22,6 +22,10 @@
     --bio: #04BE51;
     --comp: #0078D7;
     --footer-bg: #2D3130;
+    /* definicao de gradientes para o background */
+    --gradients:    linear-gradient(to right, var(--main-bg), 5%, transparent, 95%, var(--main-bg)),
+                    linear-gradient(to top, var(--main-bg), 5%, transparent, 95%, var(--main-bg)),
+                    linear-gradient(to right, var(--main-bg), 75%, transparent)
 }
 
 body {
@@ -144,8 +148,11 @@ nav ul li a:hover::after {
 
 #about {
     background-color: var(--main-bg);
+    /*    declarado no HTML de cada página, para pegar o background individual dela (se existe)
+    background-image: url('./images/bg'), linear-gradient(to right, transparent, var(--main-bg)); */
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat;
+    background-position: top;
 }
 
 
