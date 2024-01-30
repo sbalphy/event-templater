@@ -22,6 +22,7 @@
         function playAudio() {
           var image = document.getElementById("image");
           image.src = "./lexicon/images/enemy.png"
+          image.style = "position: fixed; width: 100%; height: 100%; object-fit: cover;"
           var audio = document.getElementById("music");
           audio.play();
         }
