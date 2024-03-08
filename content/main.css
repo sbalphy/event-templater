@@ -42,6 +42,10 @@ p {
 h1 {
     color: var(--details);
 }
+
+h3 {
+    color: var(--header-bg);
+}
 /* header da página, preferívelmente deixar uniforme */
 
 #header {
